@@ -1,6 +1,6 @@
 const width_threshold = 480;
 
-function drawLineChart() {
+function drawLineChart(data1,data2) {
   if ($("#lineChart").length) {
     ctxLine = document.getElementById("lineChart").getContext("2d");
     optionsLine = {
@@ -29,14 +29,14 @@ function drawLineChart() {
         datasets: [
           {
             label: "Income Investments",
-            data: [88, 68, 79, 57, 56, 55, 70,88, 68, 79, 57, 56, 55, 7],
+            data: [1,2,3],
             fill: false,
             borderColor: "rgb(75, 192, 192)",
             lineTension: 0.1
           },
           {
             label: "Starting Sum Rate",
-            data: [33, 45, 37, 21, 55, 74, 69],
+            data: [3,2,1],
             fill: false,
             borderColor: "rgba(255,99,132,1)",
             lineTension: 0.1

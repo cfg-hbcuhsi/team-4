@@ -1,6 +1,7 @@
 from flask import Flask, render_template, url_for , request
 import requests
 from bs4 import BeautifulSoup as BS
+from main import everything
 
 app=Flask(__name__,template_folder='templatess')
 
@@ -33,13 +34,15 @@ def home():
 
 
     if request.method == 'POST':
-        data1=request.form['15']
-        data2=request.form['20']
-        data3=request.form['35']
-        data4=request.form['50']
+        data1=int(request.form['15'])
+        data2=int(request.form['20'])
+        data3=int(request.form['35'])
+        data4=int(request.form['50'])
 
         print(data1,data2)
-        return render_template('invest_2.html')
+        dict_=everything(data1,data2,data3,data4)
+        print(dict_)
+        return render_template('invest_2.html',data1=dict_.get('invested: running total'),data2=dict_.get('total value of investments'))
     return render_template('invest_2.html')
 
 
@@ -49,6 +52,7 @@ def collegeinfo():
     if request.method == 'POST':
         data1 = request.form['user_name']
         data1=data1.replace(' ','-')
+
         full=strin1+data1+strin2
         response = requests.get(str(full))
         soup = BS(response.content, 'lxml')

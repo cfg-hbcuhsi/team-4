@@ -1,4 +1,4 @@
-import pandas as pd
+# import pandas as pd
 #creates an array of sequential numbers corresponding to months in the future
 #def months(month, age, d, m, invested, value):
 def everything(monthly_investment_at_age_15, monthly_investment_at_age_25,
@@ -38,23 +38,25 @@ def everything(monthly_investment_at_age_15, monthly_investment_at_age_25,
 #def invest(invested):
 #def invest(invested, value):
     for i in range(months_to_track):
-        if i == 0:
-            amount_invested.append(starting_sum + monthly_investment[i])
-        else:
-            amount_invested.append(amount_invested[i - 1] + monthly_investment[i])
+        if len(amount_invested) > 11:
+            if i == 0:
+                amount_invested.append(starting_sum + monthly_investment[i])
+            else:
+                amount_invested.append(amount_invested[i - 1] + monthly_investment[i])
 #total value of the investments over time
 #def calculate_wealth(value):
     for i in range(months_to_track):
-        if i == 0:
-            value_of_investment.append(amount_invested[i])
-        else:
-            value_of_investment.append(
-                value_of_investment[i - 1] + monthly_investment[i] + (value_of_investment[i - 1] * 0.06 / 12))
+        if len(value_of_investment) > 11:
+            if i == 0:
+                value_of_investment.append(amount_invested[i])
+            else:
+                value_of_investment.append(
+                    value_of_investment[i - 1] + monthly_investment[i] + (value_of_investment[i - 1] * 0.06 / 12))
     thisdict = {
         "invested: running total": amount_invested,
         "total value of investments": value_of_investment,
     }
-    print(thisdict)
+    return thisdict
 
 
 #default age of user is 15
@@ -70,24 +72,24 @@ months_to_track = int((65 - current_age) * 12 + 1)
 
 #This is an array that tracks the total number of months investments will be made starting from 0
 month = []
-months(month)
+# months(month)
 
 #This array tracks the age of the user over time
 at_age = []
-at_what_age(at_age)
+# at_what_age(at_age)
 
 monthly_investment = []
-monthly(monthly_investment, month)
+# monthly(monthly_investment, month)
 
 amount_invested = []
-invest(amount_invested)
+# invest(amount_invested)
 
 value_of_investment = []
-calculate_wealth(value_of_investment)
+# calculate_wealth(value_of_investment)
 
 #prints values
-for i in range(months_to_track):
-   print(month[i], at_age[i], amount_invested[i], "  ", value_of_investment[i])
+# for i in range(months_to_track):
+#    print(month[i], at_age[i], amount_invested[i], "  ", value_of_investment[i])
 
 # create dataframe
 # df_marks = pd.DataFrame({
@@ -103,6 +105,6 @@ monthly_investment_at_age_25 = 75 #can be changed to a variable
 monthly_investment_at_age_35 = 125 #can be changed to a variable
 monthly_investment_at_age_50 = 200 #can be changed to a variable
 
-everything(monthly_investment_at_age_15, monthly_investment_at_age_25,
+dict_=everything(monthly_investment_at_age_15, monthly_investment_at_age_25,
            monthly_investment_at_age_35, monthly_investment_at_age_50)
 
