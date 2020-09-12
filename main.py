@@ -1,8 +1,9 @@
 import pandas as pd
 #creates an array of sequential numbers corresponding to months in the future
 #def months(month, age, d, m, invested, value):
-def everything(starting_sum, monthly_investment_at_age_15, monthly_investment_at_age_25,
+def everything(monthly_investment_at_age_15, monthly_investment_at_age_25,
                monthly_investment_at_age_35, monthly_investment_at_age_50):
+    starting_sum = 0;
     current_age = 15
     retirement_age = 65
     months_to_track = int(
@@ -57,12 +58,12 @@ def everything(starting_sum, monthly_investment_at_age_15, monthly_investment_at
 
 
 #default age of user is 15
-starting_sum = 0 #can be changed to a variable
+#starting_sum = 0 #can be changed to a variable
 monthly_investment_at_age_15 = 20 #can be changed to a variable
 monthly_investment_at_age_25 = 75 #can be changed to a variable
 monthly_investment_at_age_35 = 125 #can be changed to a variable
 monthly_investment_at_age_50 = 200 #can be changed to a variable
 
-everything(starting_sum, monthly_investment_at_age_15, monthly_investment_at_age_25,
+everything(monthly_investment_at_age_15, monthly_investment_at_age_25,
            monthly_investment_at_age_35, monthly_investment_at_age_50)
 
