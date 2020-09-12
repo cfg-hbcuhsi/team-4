@@ -23,3 +23,15 @@ class Entry:
     def print_entry(self):
         msg = '' + self.name + ' ' + str(self.value) + ' ' + self.category + ' ' + str(self.date)
         return msg
+
+    def get_day(self):
+        splice = str(self.date).split('-')
+        return splice[2]
+
+    def get_month(self):
+        splice = str(self.date).split('-')
+        return splice[1]
+
+    def get_year(self):
+        splice = str(self.date).split('-')
+        return splice[0]

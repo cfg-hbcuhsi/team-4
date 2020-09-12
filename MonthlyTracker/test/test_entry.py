@@ -45,7 +45,26 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
+    def test_get_day(self):
+        test_entry = Entry("test", 5.90, "food", datetime.date(2020, 12, 9))
 
+        expected = '09'
+        actual = test_entry.get_day()
 
-if __name__ == '__main__':
-    unittest.main()
+        self.assertEqual(expected, actual)
+
+    def test_get_month(self):
+        test_entry = Entry("test", 5.90, "food", datetime.date(2020, 12, 9))
+
+        expected = '12'
+        actual = test_entry.get_month()
+
+        self.assertEqual(expected, actual)
+
+    def test_get_year(self):
+        test_entry = Entry("test", 5.90, "food", datetime.date(2020, 12, 9))
+
+        expected = '2020'
+        actual = test_entry.get_year()
+
+        self.assertEqual(expected, actual)
