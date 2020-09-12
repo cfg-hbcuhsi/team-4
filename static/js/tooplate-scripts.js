@@ -9,7 +9,7 @@ function drawLineChart() {
           {
             scaleLabel: {
               display: true,
-              labelString: "Hits"
+              labelString: "Amount"
             }
           }
         ]
@@ -24,36 +24,30 @@ function drawLineChart() {
       type: "line",
       data: {
         labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July"
+          'Age : 15','20','35','50','65'
         ],
         datasets: [
           {
-            label: "Latest Hits",
-            data: [88, 68, 79, 57, 56, 55, 70],
+            label: "Income Investments",
+            data: [88, 68, 79, 57, 56, 55, 70,88, 68, 79, 57, 56, 55, 7],
             fill: false,
             borderColor: "rgb(75, 192, 192)",
             lineTension: 0.1
           },
           {
-            label: "Popular Hits",
+            label: "Starting Sum Rate",
             data: [33, 45, 37, 21, 55, 74, 69],
             fill: false,
             borderColor: "rgba(255,99,132,1)",
             lineTension: 0.1
           },
-          {
-            label: "Featured",
-            data: [44, 19, 38, 46, 85, 66, 79],
-            fill: false,
-            borderColor: "rgba(153, 102, 255, 1)",
-            lineTension: 0.1
-          }
+//          {
+//            label: "Featured",
+//            data: [44, 19, 38, 46, 85, 66, 79],
+//            fill: false,
+//            borderColor: "rgba(153, 102, 255, 1)",
+//            lineTension: 0.1
+//          }
         ]
       },
       options: optionsLine
@@ -63,7 +57,7 @@ function drawLineChart() {
   }
 }
 
-function drawBarChart() {
+function drawBarChart(data2) {
   if ($("#barChart").length) {
     ctxBar = document.getElementById("barChart").getContext("2d");
 
@@ -90,32 +84,41 @@ function drawBarChart() {
     configBar = {
       type: "bar",
       data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+           labels: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "Jun",
+          "July"
+        ],
         datasets: [
-          {
-            label: "# of Hits",
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-              "rgba(255, 206, 86, 0.2)",
-              "rgba(75, 192, 192, 0.2)",
-              "rgba(153, 102, 255, 0.2)",
-              "rgba(255, 159, 64, 0.2)"
-            ],
-            borderColor: [
-              "rgba(255,99,132,1)",
-              "rgba(54, 162, 235, 1)",
-              "rgba(255, 206, 86, 1)",
-              "rgba(75, 192, 192, 1)",
-              "rgba(153, 102, 255, 1)",
-              "rgba(255, 159, 64, 1)"
-            ],
-            borderWidth: 1
-          }
+            data2
+//          {
+//            label: "# of Hits!",
+//            data: [12, 19, 3, 5, 2, 3],
+//            backgroundColor: [
+//              "rgba(255, 99, 132, 0.2)",
+//              "rgba(54, 162, 235, 0.2)",
+//              "rgba(255, 206, 86, 0.2)",
+//              "rgba(75, 192, 192, 0.2)",
+//              "rgba(153, 102, 255, 0.2)",
+//              "rgba(255, 159, 64, 0.2)"
+//            ],
+//            borderColor: [
+//              "rgba(255,99,132,1)",
+//              "rgba(54, 162, 235, 1)",
+//              "rgba(255, 206, 86, 1)",
+//              "rgba(75, 192, 192, 1)",
+//              "rgba(153, 102, 255, 1)",
+//              "rgba(255, 159, 64, 1)"
+//            ],
+//            borderWidth: 1
+//          }
         ]
       },
-      options: optionsBar
+//      options: optionsBar
     };
 
     barChart = new Chart(ctxBar, configBar);
@@ -140,10 +143,10 @@ function drawPieChart() {
               window.chartColors.purple,
               window.chartColors.green
             ],
-            label: "Storage"
+            label: "Gender Data"
           }
         ],
-        labels: ["Used: 4,600 GB", "Available: 5,400 GB"]
+        labels: ["men", "women"]
       },
       options: optionsPie
     };

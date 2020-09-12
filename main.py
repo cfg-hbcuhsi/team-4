@@ -76,14 +76,14 @@ value_of_investment = []
 calculate_wealth(value_of_investment)
 
 #prints values
-#for i in range(months_to_track):
-#    print(month[i], at_age[i], amount_invested[i], "  ", value_of_investment[i])
+for i in range(months_to_track):
+   print(month[i], at_age[i], amount_invested[i], "  ", value_of_investment[i])
 
 # create dataframe
-df_marks = pd.DataFrame({
-     'amount invested': amount_invested,
-     'value of investment': value_of_investment})
-
-# render dataframe as html
-html = df_marks.to_html()
-print(html)
+# df_marks = pd.DataFrame({
+#      'amount invested': amount_invested,
+#      'value of investment': value_of_investment})
+#
+# # render dataframe as html
+# html = df_marks.to_html()
+# print(html)
